@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Homework2</title>
+    <title>Homework</title>
 </head>
 
 <body>
@@ -21,51 +21,51 @@
     </div>
 
 
-<script>
-    "use strict";
-// 1. Ко всем элементам с классом "dropdown-item" добавить класс
-"super-dropdown"
-const dropdownItems = document.querySelectorAll('.dropdown-item');
-dropdownItems.forEach(item => {
-item.classList.add('super-dropdown');
-});
-// 2. У элемента с классом btn убрать или добавить класс
-"btn-secondary"
-const btnElement = document.querySelector('.btn');
-if (btnElement.classList.contains('btn-secondary')) {
-btnElement.classList.remove('btn-secondary');
-} else {
-btnElement.classList.add('btn-secondary');
-}
-// 3. У элемента с классом "menu" удалить класс "dropdown-menu"
-const menuElement = document.querySelector('.menu');
-if (menuElement) {
-menuElement.classList.remove('dropdown-menu');
-}
-// 4. Добавить после div с классом "dropdown" разметку
-<a href="#">link </a>
-const dropdownDiv = document.querySelector('.dropdown');
-dropdownDiv.insertAdjacentHTML('afterend', '<a href="#">link</a>');
-// 5. Заменить id "dropdownMenuButton" на "superDropdown"
-const dropdownButton =
-document.getElementById('dropdownMenuButton');
-if (dropdownButton) {
-dropdownButton.id = 'superDropdown';
-}
-// 6. Добавить атрибут data-dd со значением 3 элементу с атрибутом aria-labelledby="dropdownMenuButton"
-const ariaElement =
-document.querySelector('[aria-labelledby="dropdownMenuButton"]');
-if (ariaElement) {
-ariaElement.dataset.dd = '3';
-}
-// 7. Удалить атрибут type у элемента с классом "dropdown-toggle"
-const dropdownToggle = document.querySelector('.dropdown-toggle');
-if (dropdownToggle) {
-dropdownToggle.removeAttribute('type');
-}
+    <script>
+        "use strict";
+        // 1. Ко всем элементам с классом "dropdown-item" добавить класс
+        "super-dropdown"
+        const dropdownItems = document.querySelectorAll('.dropdown-item');
+        dropdownItems.forEach(item => {
+            item.classList.add('super-dropdown');
+        });
+        // 2. У элемента с классом btn убрать или добавить класс
+        "btn-secondary"
+        const btnElement = document.querySelector('.btn');
+        if (btnElement.classList.contains('btn-secondary')) {
+            btnElement.classList.remove('btn-secondary');
+        } else {
+            btnElement.classList.add('btn-secondary');
+        }
+        // 3. У элемента с классом "menu" удалить класс "dropdown-menu"
+        const menuElement = document.querySelector('.menu');
+        if (menuElement) {
+            menuElement.classList.remove('dropdown-menu');
+        }
+        // 4. Добавить после div с классом "dropdown" разметку
+        <a href="#">link </a>
+        const dropdownDiv = document.querySelector('.dropdown');
+        dropdownDiv.insertAdjacentHTML('afterend', '<a href="#">link</a>');
+        // 5. Заменить id "dropdownMenuButton" на "superDropdown"
+        const dropdownButton =
+            document.getElementById('dropdownMenuButton');
+        if (dropdownButton) {
+            dropdownButton.id = 'superDropdown';
+        }
+        // 6. Добавить атрибут data-dd со значением 3 элементу с атрибутом aria-labelledby="dropdownMenuButton"
+        const ariaElement =
+            document.querySelector('[aria-labelledby="dropdownMenuButton"]');
+        if (ariaElement) {
+            ariaElement.dataset.dd = '3';
+        }
+        // 7. Удалить атрибут type у элемента с классом "dropdown-toggle"
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        if (dropdownToggle) {
+            dropdownToggle.removeAttribute('type');
+        }
 
 
-</script>
+    </script>
 </body>
 
 </html>
