@@ -1,32 +1,5 @@
-export const products = [
-    {
-        imgProduct: "img/t-shirt.jpg",
-        nameProduct: "Футболка",
-        descriptionProduct: "Очень красивая и удобная футболка в различных цветах.",
-        priceProduct: "25 евро"
-    },
-    {
-        imgProduct: "img/jeans.jpg",
-        nameProduct: "Джинсы",
-        descriptionProduct: "Повседневные джинсы в различных размерах и цветах.",
-        priceProduct: "50 евро"
-    },
-    {
-        imgProduct: "img/sneakers.jpg",
-        nameProduct: "Кроссовки",
-        descriptionProduct: "Удобные кроссовки для спорта и повседневной носки.",
-        priceProduct: "70 евро"
-    },
-    {
-        imgProduct: "img/dress.jpg",
-        nameProduct: "Платье",
-        descriptionProduct: "Элегантное платье с разнообразными деталями.",
-        priceProduct: "40 евро"
-    },
-    {
-        imgProduct: "img/boots.jpg",
-        nameProduct: "Ботинки",
-        descriptionProduct: "Кожаные ботинки на платформе с меховой отделкой.",
-        priceProduct: "80 евро"
-    }
-];
+
+// Пример данных в формате JSON
+const dataJSON = '[{"id":1,"title":"Футболка","description":"Очень красивая и удобная футболка в различных цветах","price":10.99,"image":"img/t-shirt.jpg"}, {"id":2,"title":"Джинсы","description":"Повседневные джинсы в различных размерах и цветах","price":12.99,"image":"img/jeans.jpg"},{"id":3, "title":"Кроссовки","description":"Удобные кроссовки для спорта и повседневной носки","price":15.99,"image":"img/sneakers.jpg"}, {"id":3, "title":"Платье","description":"Элегантное платье с разнообразными деталями","price":24.99,"image":"img/dress.jpg"}]';
+// Преобразование строки JSON в объект JavaScript
+const data = JSON.parse(dataJSON);
