@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>DZ6</title>
+  </head>
+  <body>
+    <section class="top__products center">
+      <h3 class="subtitle__products">Fetured Items</h3>
+      <p class="text_products">
+        Shop for items based on what we featured in this week
+      </p>
+      <div class="box__products"></div>
+      <button class="button__products">Browse All Product</button>
+    </section>
+    <script src="data.js"></script>
+    <script>
+      const data = JSON.parse(dataProducts);
+
+      const boxProducts = document.querySelector(".box__products");
+
+      data.forEach((product) => {
+        const productEl = document.createElement("div");
+        productEl.classList.add("items__products");
+
+        const aEl = document.createElement("a");
+        aEl.href = "#";
+
+        const boxImg = document.createElement("div");
+        boxImg.classList.add("box__img__products");
+
+        const imgEl = document.createElement("img");
+        imgEl.classList.add("img__items__products");
+        imgEl.src = product.img;
+        imgEl.alt = "product";
+
+        const contentEl = document.createElement("div");
+        contentEl.classList.add("content__products");
+
+        const subtitleEl = document.createElement("h2");
+        subtitleEl.classList.add("subtitle__items__products");
+        subtitleEl.textContent = product.subtitle;
+
+        const textEl = document.createElement("p");
+        textEl.classList.add("text__items__products");
+        textEl.textContent = product.text;
+
+        const priceEl = document.createElement("p");
+        priceEl.classList.add("price__items__products");
+        priceEl.textContent = product.price;
+
+        const addEl = document.createElement("a");
+        addEl.classList.add("add");
+        addEl.href = "#";
+        addEl.textContent = product.add;
+
+        const addText = document.createElement("p");
+        addText.classList.add("add__text");
+        addText.textContent = product.addText;
+
+        boxProducts.append(productEl);
+
+        productEl.append(aEl);
+        productEl.append(addEl);
+
+        aEl.append(boxImg);
+        aEl.append(contentEl);
+
+        boxImg.append(imgEl);
+
+        contentEl.append(subtitleEl);
+        contentEl.append(textEl);
+        contentEl.append(priceEl);
+
+        addEl.append(addText);
+      });
+
+      const boxCard = document.createElement("div");
+      boxCard.classList.add("boxCard");
+      const titleCard = document.createElement("h2");
+      titleCard.classList.add("title__card");
+      titleCard.textContent = "Cart Items";
+      boxCard.append(titleCard);
+      boxCard.style.display = "none";
+      boxProducts.append(boxCard);
+
+      const allAdd = document.querySelectorAll(".add");
+      
+      allAdd.forEach((element) => {
+        element.addEventListener("click", function (e) {
+          boxCard.style.display = "block";
+
+          const card = document.createElement("div");
+          card.classList.add("card");
+
+          const cardImg = document.createElement("img");
+          cardImg.classList.add("card__img");
+          const cardImgNew = element.parentElement.querySelector("img");
+          cardImg.src = cardImgNew.src;
+          cardImg.alt = "foto";
+
+          const cartContent = document.createElement("div");
+          cartContent.classList.add("card__content");
+
+          const cardName = document.createElement("a");
+          cardName.classList.add("card__name", "text");
+          const cardNameNew = element.parentElement.querySelector(
+            ".subtitle__items__products"
+          );
+          cardName.textContent = `Name: ${cardNameNew.textContent}`;
+
+          const cardPris = document.createElement("p");
+          cardPris.classList.add("card__price");
+          const cardPriceNew = element.parentElement.querySelector(
+            ".price__items__products"
+          );
+          cardPris.textContent = `Price: ${cardPriceNew.textContent}`;
+
+          const cardColor = document.createElement("p");
+          cardColor.classList.add("card__price");
+          cardColor.textContent = `Color: Black`;
+
+          const sizeEl = document.createElement("p");
+          sizeEl.classList.add("card__size");
+          sizeEl.textContent = `Size: Xl`;
+
+          const quantityEl = document.createElement("p");
+          quantityEl.classList.add("card__quantity");
+          quantityEl.textContent = `Quantity `;
+
+          const inputEl = document.createElement("input");
+          inputEl.classList.add("quantity");
+          inputEl.type = "number";
+          inputEl.value = 1;
+
+          const buttonEl = document.createElement("button");
+          buttonEl.classList.add("vector");
+          buttonEl.textContent = "X";
+
+          buttonEl.addEventListener("click", function (e) {
+            const delEl = e.target.parentElement;
+            delEl.remove();
+
+            if (boxCard.querySelector(".card") == null) {
+              console.log("ppp");
+              boxCard.style.display = "none";
+            }
+          });
+
+          card.append(cardImg);
+          card.append(cartContent);
+          cartContent.append(cardName);
+          cartContent.append(cardPris);
+          cartContent.append(cardColor);
+          cartContent.append(sizeEl);
+          cartContent.append(quantityEl);
+          quantityEl.append(inputEl);
+          card.append(buttonEl);
+          boxProducts.append(boxCard);
+          boxCard.append(card);
+        });
+      });
+    </script>
+  </body>
+</html>
